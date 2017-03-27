@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="更多" Icon="more.png" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="yysgl.forms.MorePage">
+	<TableView Intent="Settings">
+		<TableRoot>
+			<TableSection Title="">
+				<!--<SwitchCell Text="夜间模式" On="{Binding IsDarkTheme}" OnChanged="StyleOnChanged" />-->
+				<TextCell Text="原声音乐" Command="{Binding OpenMusic}" />
+				<TextCell Text="悬赏查询" Command="{Binding OpenRewardSearch}" />
+				<TextCell Text="游戏日历" Command="{Binding OpenGameCalendar}" />
+				<TextCell Text="游戏头像" Command="{Binding OpenHeadPortrait}" />
+			</TableSection>
+			<TableSection Title="">
+				<TextCell Text="给我评分" Command="{Binding AppScore}" />
+<!--				<TextCell Text="意见反馈" Command="{Binding OpenFeedback}" />-->
+				<TextCell Text="应用分享" Command="{Binding OpenShare}" />
+			</TableSection>
+		</TableRoot>
+	</TableView>
+</ContentPage>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="御魂" Icon="yuhun.png" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="yysgl.forms.YuHunListPage" xmlns:local="clr-namespace:yysgl.forms">
+		<ListView RowHeight="80" HasUnevenRows="true" IsGroupingEnabled="true" SeparatorVisibility="None" ItemsSource="{Binding YuHunGroupSource}" ItemSelected="ListItemSelected">
+		<!--自定义GroupHeader不需要设置 GroupDisplayBinding="{Binding GroupTitle}"-->
+		<ListView.GroupHeaderTemplate>
+			<DataTemplate>
+				<ViewCell Height="50">
+					<ContentView>
+						<Label Text="{Binding GroupType}" FontSize="Large" FontAttributes="Italic,Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+					</ContentView>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.GroupHeaderTemplate>
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<ContentView Padding="3">
+						<Frame OutlineColor="Accent" Padding="2">
+							<StackLayout Orientation="Horizontal">
+								<StackLayout Spacing="1">
+									<!--<Image Aspect="AspectFill" Source="{Binding Image}" WidthRequest="50" HeightRequest="50" />-->
+									<Image Aspect="AspectFill" Source="{Binding ImageSource}" WidthRequest="50" HeightRequest="50" />
+									<Label Text="{Binding Name}" FontSize="12" HorizontalOptions="Center" />
+								</StackLayout>
+								<StackLayout Spacing="3" Padding="2,4,2,4">
+									<Label Text="{Binding Result2}" FontSize="12" HorizontalOptions="FillAndExpand" />
+									<Label Text="{Binding Result4}" FontSize="12" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+									<Label Text="{Binding GetWay}" FontSize="12" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
+								</StackLayout>
+							</StackLayout>
+						</Frame>
+					</ContentView>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>

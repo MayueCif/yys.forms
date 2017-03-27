@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="原声音乐" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:yysgl.forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="yysgl.forms.MusicListPage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<local:IntToBoolConverter x:Key="intToBool" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<StackLayout>
+		<local:MyueLabel x:Name="currentName" IsMarquee="true" Margin="8" HorizontalOptions="FillAndExpand" Text="当前无正在播放歌曲" />
+		<ListView ItemsSource="{Binding MusicSource}" ItemSelected="OnItemSelected">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+							<StackLayout Margin="8,0,0,0" Spacing="2">
+								<Label Text="{Binding Name}" FontSize="Medium" HorizontalOptions="FillAndExpand"/>
+								<StackLayout Orientation="Horizontal">
+									<Label Text="{Binding Artist}" FontSize="Small"/>
+									<Label Text="-" FontSize="Small"/>
+									<Label Text="{Binding Album}" FontSize="Small"/>
+								</StackLayout>
+							</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+		<StackLayout Orientation="Horizontal" Padding="8">
+			<Label FontSize="Micro" Text="00:00" VerticalOptions="Center" x:Name="currentTime" />
+			<!--			<Slider x:Name="slider" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Value="0" ValueChanged="SliderValueChanged" />-->
+			<ProgressBar x:Name="progress" Progress="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+			<Label FontSize="Micro" Text="00:00" VerticalOptions="Center" x:Name="totalTime" />
+		</StackLayout>
+		<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="32" Margin="0,0,0,16">
+			<Image WidthRequest="40" HeightRequest="40">
+				<Image.Source>
+					<FileImageSource File="previous.png" />
+				</Image.Source>
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding PreviousCommand}" />
+				</Image.GestureRecognizers>
+			</Image>
+			<Image x:Name="playImage" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center">
+				<Image.Source>
+					<FileImageSource File="play.png" />
+				</Image.Source>
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding PlayOrPauseCommand}" />
+				</Image.GestureRecognizers>
+			</Image>
+			<Image WidthRequest="40" HeightRequest="40" HorizontalOptions="End">
+				<Image.Source>
+					<FileImageSource File="next.png" />
+				</Image.Source>
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding NextCommand}" />
+				</Image.GestureRecognizers>
+			</Image>
+		</StackLayout>
+	</StackLayout>
+</ContentPage>

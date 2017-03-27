@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="yysgl.forms.App" xmlns:light="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Light" xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark">
+	<Application.Resources>
+		<!--<ResourceDictionary>
+			<Color x:Key="backgroundColor">White</Color>
+			<Color x:Key="textColor">Black</Color>
+			<Style TargetType="Label">
+				<Setter Property="TextColor" Value="{DynamicResource textColor}" />
+			</Style>
+		</ResourceDictionary>-->
+		<!--<ResourceDictionary MergedWith="dark:DarkThemeResources" />-->
+		<ResourceDictionary>
+			<Style TargetType="Button">
+				<Setter Property="Margin" Value="16,16,16,16" />
+				<Setter Property="BorderColor" Value="Lime" />
+				<Setter Property="BackgroundColor" Value="#7CCD7C" />
+			</Style>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="yysgl.forms.GongLueContentPage" xmlns:local="clr-namespace:yysgl.forms">
+	<Grid RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<local:BannerView />
+		<WebView x:Name="webView" Grid.Row="1"/>
+	</Grid>
+</ContentPage>

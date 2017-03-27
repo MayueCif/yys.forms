@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="yysgl.forms.GongLuePage" xmlns:local="clr-namespace:yysgl.forms" Title="攻略" Icon="news.png">
+	<Grid RowSpacing="16" Margin="0,16,0,0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<StackLayout>
+			<Image Source="{local:ResourceImageExtension yysgl.forms.Resource.zuixin.png}"/>
+			<Label Text="最新" HorizontalOptions="Center"/>
+			<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding OpenGongLueList}" 
+				CommandParameter="http://yys.163.com/skill/index.html|最新"/>
+			</StackLayout.GestureRecognizers>
+		</StackLayout>
+		<StackLayout Grid.Column="1">
+			<Image Source="{local:ResourceImageExtension yysgl.forms.Resource.xinshou.png}"/>
+			<Label Text="新手" HorizontalOptions="Center"/>
+			<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding OpenGongLueList}" 
+				CommandParameter="http://yys.163.com/skill/fresh/index.html|新手"/>
+			</StackLayout.GestureRecognizers>
+		</StackLayout>
+		<StackLayout Grid.Column="2">
+			<Image Source="{local:ResourceImageExtension yysgl.forms.Resource.shishen.png}"/>
+			<Label Text="式神" HorizontalOptions="Center"/>
+			<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding OpenGongLueList}" 
+				CommandParameter="http://yys.163.com/skill/shishen/index.html|式神"/>
+			</StackLayout.GestureRecognizers>
+		</StackLayout>
+		<StackLayout Grid.Row="1">
+			<Image Source="{local:ResourceImageExtension yysgl.forms.Resource.yuhun.png}"/>
+			<Label Text="御魂" HorizontalOptions="Center"/>
+			<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding OpenGongLueList}" 
+				CommandParameter="http://yys.163.com/skill/yuhun/index.html|御魂"/>
+			</StackLayout.GestureRecognizers>
+		</StackLayout>
+		<StackLayout Grid.Row="1" Grid.Column="1">
+			<Image Source="{local:ResourceImageExtension yysgl.forms.Resource.douji.png}"/>
+			<Label Text="斗技" HorizontalOptions="Center"/>
+			<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding OpenGongLueList}" 
+				CommandParameter="http://yys.163.com/skill/douji/index.html|斗技"/>
+			</StackLayout.GestureRecognizers>
+		</StackLayout>
+		<StackLayout  Grid.Row="1" Grid.Column="2">
+			<Image Source="{local:ResourceImageExtension yysgl.forms.Resource.wanfa.png}"/>
+			<Label Text="玩法" HorizontalOptions="Center"/>
+			<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding OpenGongLueList}" 
+				CommandParameter="http://yys.163.com/skill/wanfa/index.html|玩法"/>
+			</StackLayout.GestureRecognizers>
+		</StackLayout>
+	</Grid>
+</ContentPage>

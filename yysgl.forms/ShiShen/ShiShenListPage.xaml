@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="式神" Icon="shishen.png" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" x:Class="yysgl.forms.ShiShenListPage">
+	<flv:FlowListView FlowColumnCount="4" SeparatorVisibility="None" RowHeight="100" FlowUseAbsoluteLayoutInternally="false" FlowColumnExpand="None"
+			IsGroupingEnabled="true" FlowGroupDisplayBinding="{Binding GroupRarity}" FlowItemTapped="OnItemTapped"
+			FlowItemsSource="{Binding ShiShenGroupSource}" >
+			<flv:FlowListView.FlowColumnTemplate>
+				<DataTemplate>
+					<Grid Padding="2">
+						
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<ffimageloading:CachedImage HeightRequest="120" Aspect="AspectFill" DownsampleUseDipUnits="true" CacheDuration="7"
+							LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png"
+							Source="{Binding Image}"/>
+
+						<Label HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End"
+							BackgroundColor="Silver" Opacity="0.7" Text="{Binding Name}"/>
+					</Grid>
+				</DataTemplate>
+			</flv:FlowListView.FlowColumnTemplate>
+
+		</flv:FlowListView>
+</ContentPage>

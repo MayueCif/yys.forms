@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="意见反馈" xmlns:local="clr-namespace:yysgl.forms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="yysgl.forms.FeedbackPage">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Name="提交" Activated="SubmitActivated" Order="Primary" />
+	</ContentPage.ToolbarItems>
+	<StackLayout Spacing="12" Padding="8">
+		<Entry x:Name="title" Placeholder="功能说明" />
+		<local:PlaceholderEditor x:Name="content" BorderColor="Silver" BorderWidth="1" Placeholder="请简要描述你的问题或意见" HeightRequest="180" />
+		<Entry x:Name="contact" Placeholder="请留下QQ、邮箱或电话" />
+		<StackLayout Orientation="Horizontal">
+			<Image x:Name="image" Aspect="AspectFill" HeightRequest="70" WidthRequest="70" Source="{local:ResourceImageExtension yysgl.forms.Resource.add_image.png}">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Tapped="AddImageTapped" />
+				</Image.GestureRecognizers>
+			</Image>
+		</StackLayout>
+	</StackLayout>
+</ContentPage>

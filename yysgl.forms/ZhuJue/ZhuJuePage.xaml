@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="主角" Icon="zhujue.png" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="yysgl.forms.ZhuJuePage" xmlns:local="clr-namespace:yysgl.forms" >
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<local:ZhuJueItemView Grid.Row="0" Grid.Column="0" Image="{Binding ZhuJueSource[0].Image}" 
+			Title="{Binding ZhuJueSource[0].Name}" CommandButton1="{Binding OpenJianjie}" CommandParameterButton1="{Binding ZhuJueSource[0].ID}" 
+			CommandButton2="{Binding OpenJiNeng}" CommandParameterButton2="{Binding ZhuJueSource[0].ID}" 
+			CommandButton3="{Binding OpenVideoPlayer}" CommandParameterButton3="{Binding ZhuJueSource[0].Video}"/>
+		<local:ZhuJueItemView Grid.Row="0" Grid.Column="1" Image="{Binding ZhuJueSource[1].Image}" 
+			Title="{Binding ZhuJueSource[1].Name}" CommandButton1="{Binding OpenJianjie}" CommandParameterButton1="{Binding ZhuJueSource[1].ID}" 
+			CommandButton2="{Binding OpenJiNeng}" CommandParameterButton2="{Binding ZhuJueSource[1].ID}" 
+			CommandButton3="{Binding OpenVideoPlayer}" CommandParameterButton3="{Binding ZhuJueSource[1].Video}"/>
+		<local:ZhuJueItemView Grid.Row="1" Grid.Column="0" Image="{Binding ZhuJueSource[2].Image}" 
+			Title="{Binding ZhuJueSource[2].Name}" CommandButton1="{Binding OpenJianjie}" CommandParameterButton1="{Binding ZhuJueSource[2].ID}" 
+			CommandButton2="{Binding OpenJiNeng}" CommandParameterButton2="{Binding ZhuJueSource[2].ID}" 
+			CommandButton3="{Binding OpenVideoPlayer}" CommandParameterButton3="{Binding ZhuJueSource[2].Video}"/>
+		<local:ZhuJueItemView Grid.Row="1" Grid.Column="1" Image="{Binding ZhuJueSource[3].Image}" 
+			Title="{Binding ZhuJueSource[3].Name}" CommandButton1="{Binding OpenJianjie}" CommandParameterButton1="{Binding ZhuJueSource[3].ID}" 
+			CommandButton2="{Binding OpenJiNeng}" CommandParameterButton2="{Binding ZhuJueSource[3].ID}" 
+			CommandButton3="{Binding OpenVideoPlayer}" CommandParameterButton3="{Binding ZhuJueSource[3].Video}"/>
+	</Grid>
+</ContentPage>

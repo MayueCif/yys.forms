@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:yysgl.forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" x:Class="yysgl.forms.ShiShenPage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Label">
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="VerticalOptions" Value="Center" />
+				<Setter Property="Margin">
+					<Setter.Value>
+						<OnPlatform x:TypeArguments="Thickness">
+							<OnPlatform.iOS>8,8,8,8</OnPlatform.iOS>
+							<OnPlatform.Android>10,10,10,10</OnPlatform.Android>
+						</OnPlatform>
+					</Setter.Value>
+				</Setter>
+				<Setter Property="HorizontalTextAlignment" Value="Center" />
+			</Style>
+			<local:IntToBoolConverter x:Key="intToBool" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<Grid x:Name="grid" ColumnSpacing="0" RowSpacing="0">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="2" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<local:BannerView Grid.ColumnSpan="4"/>
+		<Label TextColor="Blue" Grid.Row="1" Grid.Column="0" Text="图鉴">
+			<Label.GestureRecognizers>
+				<TapGestureRecognizer Tapped="OnHeaderTapped" />
+			</Label.GestureRecognizers>
+		</Label>
+		<Label Grid.Row="1" Grid.Column="1" Text="参数">
+			<Label.GestureRecognizers>
+				<TapGestureRecognizer Tapped="OnHeaderTapped" />
+			</Label.GestureRecognizers>
+		</Label>
+		<Label Grid.Row="1" Grid.Column="2" Text="传记">
+			<Label.GestureRecognizers>
+				<TapGestureRecognizer Tapped="OnHeaderTapped" />
+			</Label.GestureRecognizers>
+		</Label>
+		<Label Grid.Row="1" Grid.Column="3" Text="技能">
+			<Label.GestureRecognizers>
+				<TapGestureRecognizer Tapped="OnHeaderTapped" />
+			</Label.GestureRecognizers>
+		</Label>
+		<BoxView x:Name="indicator" Grid.Row="2" Grid.Column="0" Color="Blue" />
+		<ContentView IsVisible="true" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4">
+			<!--<local:LongPressImage Source="{Binding BigImageUrl}" x:Name="image" Aspect="AspectFit" LongPress="OnLongPress"/>-->
+			<ffimageloading:CachedImage Aspect="AspectFill"
+							LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png"
+							Source="{Binding BigImageUrl}"/>
+		</ContentView>
+		<ContentView IsVisible="false" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4">
+			<ScrollView>
+				<StackLayout>
+				<Grid Padding="8,16,8,16" RowSpacing="8">
+					<Grid.Resources>
+						<ResourceDictionary>
+							<Style TargetType="Label">
+								<Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+								<Setter Property="VerticalOptions" Value="Center" />
+							</Style>
+							<GridLength x:Key="dividerThickness">1</GridLength>
+							<Style TargetType="BoxView">
+								<Setter Property="Color" Value="Accent" />
+							</Style>
+						</ResourceDictionary>
+					</Grid.Resources>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="{StaticResource dividerThickness}" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="{StaticResource dividerThickness}" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="{StaticResource dividerThickness}" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="{StaticResource dividerThickness}" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="{StaticResource dividerThickness}" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="{StaticResource dividerThickness}" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="{StaticResource dividerThickness}" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+					<BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+					<BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" />
+					<BoxView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
+					<BoxView Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" />
+					<BoxView Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" />
+					<BoxView Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="3" />
+					<BoxView Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="3" />
+					<Label Text="状态" Grid.Row="0" Grid.Column="0" />
+					<Label Text="觉醒前" Grid.Row="0" Grid.Column="1" />
+					<Label Text="觉醒后" Grid.Row="0" Grid.Column="2" />
+					<Label Text="头像" Grid.Row="2" Grid.Column="0" />
+					<Image Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" HeightRequest="80" WidthRequest="80" Source="{Binding BeforeAwake.HeadImage}" />
+					<Image Grid.Row="2" Grid.Column="2" HorizontalOptions="Center" HeightRequest="80" WidthRequest="80" Source="{Binding AfterAwake.HeadImage}" />
+					<Label Text="攻击" Grid.Row="4" Grid.Column="0" />
+					<Label Text="生命" Grid.Row="6" Grid.Column="0" />
+					<Label Text="防御" Grid.Row="8" Grid.Column="0" />
+					<Label Text="速度" Grid.Row="10" Grid.Column="0" />
+					<Label Text="暴击" Grid.Row="12" Grid.Column="0" />
+					<Label Text="{Binding BeforeAwake.AttackView}" Grid.Row="4" Grid.Column="1" />
+					<Label Text="{Binding BeforeAwake.LifeView}" Grid.Row="6" Grid.Column="1" />
+					<Label Text="{Binding BeforeAwake.DefenseView}" Grid.Row="8" Grid.Column="1" />
+					<Label Text="{Binding BeforeAwake.SpeedView}" Grid.Row="10" Grid.Column="1" />
+					<Label Text="{Binding BeforeAwake.CritView}" Grid.Row="12" Grid.Column="1" />
+					<Label Text="{Binding AfterAwake.AttackView}" Grid.Row="4" Grid.Column="2" />
+					<Label Text="{Binding AfterAwake.LifeView}" Grid.Row="6" Grid.Column="2" />
+					<Label Text="{Binding AfterAwake.DefenseView}" Grid.Row="8" Grid.Column="2" />
+					<Label Text="{Binding AfterAwake.SpeedView}" Grid.Row="10" Grid.Column="2" />
+					<Label Text="{Binding AfterAwake.CritView}" Grid.Row="12" Grid.Column="2" />
+					<Label Text="觉醒技能" Grid.Row="14" Grid.Column="0" />
+					<Label Text="{Binding ShiShen.AwakeIncrease}" Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="2" />
+				</Grid>
+					<Button Text="式神等级属性查询" Clicked="OnQueryPageClicked" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"/>
+				</StackLayout>
+			</ScrollView>
+		</ContentView>
+		<ContentView IsVisible="false" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4">
+			<ScrollView>
+			<StackLayout>
+				<Label Text="{Binding ShiShen.ChineseBiography}" HorizontalTextAlignment="Start" />
+				<Button x:Name="button" Text="{Binding ShiShen.CV,StringFormat='CV({0})'}" IsVisible="{Binding ShiShen.CV.Length,Converter={StaticResource intToBool}}"
+						Image="play.png" VerticalOptions="Fill" HorizontalOptions="FillAndExpand" Clicked="OnClicked"/>
+			</StackLayout>
+			</ScrollView>
+		</ContentView>
+		<ContentView IsVisible="false" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4">
+			<ContentView.Resources>
+				<ResourceDictionary>
+					<Style TargetType="Label">
+						<Setter Property="HorizontalTextAlignment" Value="Start" />
+					</Style>
+				</ResourceDictionary>
+			</ContentView.Resources>
+			<ScrollView>
+				<StackLayout x:Name="jiNengStackLayout" Spacing="16" Margin="16">
+					<Frame OutlineColor="Silver" Padding="12">
+						<StackLayout Spacing="4">
+							<StackLayout Orientation="Horizontal">
+								<Image Source="{Binding JiNengList[0].Icon}"/>
+								<Label Text="{Binding JiNengList[0].Name}" VerticalOptions="Center"/>
+							</StackLayout>
+							<!--<Label Text="{Binding JiNengList[0].Consume,StringFormat='消耗:{0}'}" />-->
+							<Label Text="{Binding JiNengList[0].Effect,StringFormat='效果:{0}'}" />
+							<Label Text="升级效果:" />
+							<Label Text="{Binding JiNengList[0].UpgradeEffect}" />
+						</StackLayout>
+					</Frame>
+					<Frame OutlineColor="Silver" Padding="12">
+						<StackLayout Spacing="4">
+							<StackLayout Orientation="Horizontal">
+								<Image Source="{Binding JiNengList[1].Icon}"/>
+								<Label Text="{Binding JiNengList[1].Name}" VerticalOptions="Center"/>
+							</StackLayout>
+							<!--<Label Text="{Binding JiNengList[1].Consume,StringFormat='消耗:{0}'}" />-->
+							<Label Text="{Binding JiNengList[1].Effect,StringFormat='效果:{0}'}" />
+							<Label Text="升级效果:" />
+							<Label Text="{Binding JiNengList[1].UpgradeEffect}" />
+						</StackLayout>
+					</Frame>
+					<Frame OutlineColor="Silver" Padding="12">
+						<StackLayout Spacing="4">
+							<StackLayout Orientation="Horizontal">
+								<Image Source="{Binding JiNengList[2].Icon}"/>
+								<Label Text="{Binding JiNengList[2].Name}" VerticalOptions="Center"/>
+							</StackLayout>
+							<!--<Label Text="{Binding JiNengList[2].Consume,StringFormat='消耗:{0}'}" />-->
+							<Label Text="{Binding JiNengList[2].Effect,StringFormat='效果:{0}'}" />
+							<Label Text="升级效果:" />
+							<Label Text="{Binding JiNengList[2].UpgradeEffect}" />
+						</StackLayout>
+					</Frame>
+				</StackLayout>
+			</ScrollView>
+		</ContentView>
+	</Grid>
+</ContentPage>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="yysgl.forms.GongLueListPage" xmlns:local="clr-namespace:yysgl.forms">
+		<ListView RowHeight="60" ItemsSource="{Binding Source}" ItemSelected="OnItemSelected">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<StackLayout Padding="8,8,8,8">
+						<Label Text="{Binding Title}" FontSize="Medium"/>
+						<Label Text="{Binding Detail,StringFormat='日期:{0}'}" FontSize="Small"/>
+					</StackLayout>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+		<ListView.Footer>
+			<StackLayout Padding="0,10,0,10" x:Name="footer">
+				<BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray"/>
+				<Label Text="点击加载更多内容" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+				<StackLayout.Triggers>
+        			<Trigger TargetType="StackLayout" Property="IsVisible" Value="False">
+            			<Setter Property="HeightRequest" Value="0" />
+        			</Trigger>
+    			</StackLayout.Triggers>
+				<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Tapped="LoadMoreTapped"/>
+				</StackLayout.GestureRecognizers>
+			</StackLayout>
+		</ListView.Footer>
+	</ListView>
+</ContentPage>

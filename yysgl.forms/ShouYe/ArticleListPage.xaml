@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="资讯" Icon="news.png" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:yysgl.forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:carouselview="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions" x:Class="yysgl.forms.ArticleListPage">
+	<StackLayout>
+		<ActivityIndicator x:Name="indicator" HorizontalOptions="Center" VerticalOptions="Start" IsRunning="false" />
+		<ListView RowHeight="90" SeparatorVisibility="None" ItemsSource="{Binding ListViewSource}" ItemSelected="ListItemSelected">
+			<ListView.Header>
+				<carouselview:CarouselViewControl x:Name="carouselview" ShowIndicators="true" HeightRequest="200" ItemsSource="{Binding CarouselViewSource}">
+					<carouselview:CarouselViewControl.ItemTemplate>
+						<DataTemplate>
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="*" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<Image Grid.RowSpan="2" Aspect="AspectFill" Source="{Binding Image}" />
+								<StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="8">
+									<Label TextColor="White" Text="{Binding Title}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+								</StackLayout>
+							</Grid>
+						</DataTemplate>
+					</carouselview:CarouselViewControl.ItemTemplate>
+				</carouselview:CarouselViewControl>
+			</ListView.Header>
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<ContentView Padding="5">
+							<Frame OutlineColor="Accent" Padding="8">
+								<Grid>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="*" />
+										<RowDefinition Height="Auto" />
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="*" />
+										<ColumnDefinition Width="Auto" />
+									</Grid.ColumnDefinitions>
+									<Label Grid.Row="0" Grid.Column="0" Text="{Binding Title}" VerticalOptions="FillAndExpand" FontSize="16" />
+									<StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Spacing="16">
+										<Label Text="{Binding Column}" FontSize="14" />
+										<Label Text="{Binding Date}" VerticalOptions="End" FontSize="14" />
+									</StackLayout>
+									<Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Aspect="AspectFill" Source="{Binding Image}" HorizontalOptions="End" WidthRequest="60" HeightRequest="60" />
+								</Grid>
+							</Frame>
+						</ContentView>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+			<ListView.Footer>
+			</ListView.Footer>
+		</ListView>
+	</StackLayout>
+</ContentPage>

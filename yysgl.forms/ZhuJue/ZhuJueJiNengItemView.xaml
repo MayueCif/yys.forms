@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="yysgl.forms.ZhuJueJiNengItemView">
+	<StackLayout Padding="6">
+		<StackLayout Orientation="Horizontal">
+			<Image x:Name="image"/>
+			<Label x:Name="title" VerticalOptions="Center"/>
+		</StackLayout>
+		<Label x:Name="describe"/>
+		<StackLayout x:Name="upGradeStack">
+		</StackLayout>
+		<BoxView Color="Accent" HeightRequest="0.8" HorizontalOptions="FillAndExpand"/>
+	</StackLayout>
+</ContentView>
