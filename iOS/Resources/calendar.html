@@ -1,0 +1,50 @@
+
+<html><!--STATUS OK-->
+<head>
+    <meta name="referrer" content="always" />
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="x-dns-prefetch-control" content="on"> 
+    <meta name="format-detection" content="telephone=no">
+    <!--<link rel="stylesheet" href="assets/css/amazeui.min.css">-->
+    <link rel="stylesheet" href="./amazeui.min.css"/>
+
+    <style>
+    .iconData{display:none}
+    </style>
+    <script type="text/javascript" src="./jquery-3.1.1.slim.min.js"></script>
+    <script>
+    $(function () {
+        var e = new Date;
+        var s = $(".iconData span").eq(e.getDay()-1).html();
+        $(".curData").html(s);
+    });
+    </script>
+</head>
+<body>
+<table class="am-table am-table-bordered am-table-radius">
+<thead>
+<tr><th>活动</th><th>介绍</th></tr>
+</thead>
+<tbody>
+<tr><td class="am-success">斗技</td><td class="am-primary">斗技,每日12:00-13:00,21:00-22:00 协同斗技,每周六日14:00-15:30</td></tr>
+<tr><td class="am-success">年兽BOSS</td><td class="am-primary">通关探索副本概率开启,随机获得金币,达摩碎片,达摩</td></tr>
+<tr><td class="am-success">石距BOSS</td><td class="am-primary">妖气封印发现，CD1小时</td></tr>
+<tr><td class="am-success">狩猎战</td><td class="am-primary">周一至周四鬼王，周五-周日阴界之门，时间19-21点</td></tr>
+<tr><td class="am-success">悬赏封印</td><td class="am-primary">每日5点和18点重置</td></tr>
+<tr><td class="am-success">结界突破</td><td class="am-primary">个人每周一6点重置，阴阳寮每日5点重置，周六日奖励翻倍</td></tr>
+<tr><td class="am-success">御魂副本</td><td class="am-primary"><span class="curData"></span>
+                  <div class="iconData">
+                      <span>【周一】雪幽魂、地藏像、鸣屋、网切</span>
+                      <span>【周二】涅槃之火、三味、招财猫、狰</span>
+                      <span>【周三】 魍魉之匣、被服、阴摩罗、魅妖</span>
+                      <span>【周四】反枕、心眼、树妖、针女</span>
+                      <span>【周五】日女巳时、镜姬、钟灵、破势</span>
+                      <span>【周六】随机掉落全部御魂</span> 
+                      <span>【周日】随机掉落全部御魂</span>
+                  </div></td></tr>
+<tr><td class="am-success">业原火</td><td class="am-primary">御魂副本获得入场卷，副本产出新御魂「木魅」「薙魂」「返魂香」</td></tr>
+</tbody>
+</table>
+</body>
+</html>

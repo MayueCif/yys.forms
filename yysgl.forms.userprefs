@@ -1,0 +1,13 @@
+﻿<Properties StartupConfiguration="{572612A3-DCD0-4B10-9CA2-0B19B11A9C0B}|Default">
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="yysgl.forms/GengDuo/HeadPortraitPage.xaml.cs" line="24" offsetX="445" offsetY="345" expression="ImageSourceList" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.yysgl.forms.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.AVD_for_Nexus_5_by_Google" />
+  <MonoDevelop.Ide.ItemProperties.yysgl.forms.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MultiItemStartupConfigurations />
+</Properties>

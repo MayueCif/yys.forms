@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="query_short_name">悬赏查询</string>
+	<string name="query_long_name">悬赏查询</string>
+	<string name="query_disable_msg">悬赏查询不可用</string>
+</resources>

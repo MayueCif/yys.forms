@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+	<shortcut android:shortcutId="settings" android:enabled="true" android:icon="@drawable/icon" android:shortcutShortLabel="@string/query_short_name" android:shortcutLongLabel="@string/query_long_name" android:shortcutDisabledMessage="@string/query_disable_msg">
+		<!--http://blog.csdn.net/qibin0506/article/details/52878690
+		https://blog.xamarin.com/simple-and-intuitive-app-shortcuts-in-android-7-1/-->
+		<intent android:action="android.intent.action.VIEW" android:targetPackage="org.loader.shotcutsstatic" android:targetClass="org.loader.shotcutsstatic.SettingsActivity" />
+		<categories android:name="android.shortcut.conversation" />
+	</shortcut>
+</shortcuts>

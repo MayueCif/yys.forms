@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "58241705656",
+    "firebase_url": "https://yys-helper.firebaseio.com",
+    "project_id": "yys-helper",
+    "storage_bucket": "yys-helper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58241705656:android:de8c2fcd630c6cc0",
+        "android_client_info": {
+          "package_name": "com.mayuecif.yys"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58241705656-tant8ohlh0ql6agmtc6lpjf3jffoutmj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9Hg_kccI0ITOaYPlmJH9hCYH6_7g3ihE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,3 @@
+/Users/Myue/Desktop/yys.forms/yys.forms/MarqueeLabel/obj/Release/Xamarin.iOS,Version=v1.0.AssemblyAttribute.cs
+/Users/Myue/Desktop/yys.forms/yys.forms/MarqueeLabel/bin/Release/MarqueeLabelBinding.dll
+/Users/Myue/Desktop/yys.forms/yys.forms/MarqueeLabel/obj/Release/MarqueeLabelBinding.dll
