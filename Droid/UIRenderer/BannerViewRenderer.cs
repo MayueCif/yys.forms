@@ -8,7 +8,7 @@ namespace yysgl.forms.Droid
 {
 	public class BannerViewRenderer : ViewRenderer<BannerView, AdView>
 	{
-		string adUnitId = "ca-app-pub-2079580879894926/3832041491";
+		string adUnitId = "ca-app-pub-XXXXXXXXXXXXXXXXXXXXX";
 		AdView adView;
 
 		protected override AdView CreateNativeControl()
