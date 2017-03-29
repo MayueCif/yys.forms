@@ -63,7 +63,7 @@ namespace yysgl.forms.Droid
 			var adView = new NativeExpressAdView(Context);
 
 			adView.AdSize = new AdSize(AdSize.FullWidth, 150);
-			adView.AdUnitId = "ca-app-pub-2079580879894926/1384775898";
+			adView.AdUnitId = "ca-app-pub-XXXXXXXXXXXXXXX";
 
 			adContainer.AddView(adView);
 
