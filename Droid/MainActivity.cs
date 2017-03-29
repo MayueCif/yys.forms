@@ -30,7 +30,7 @@ namespace yysgl.forms.Droid
 
 			//AndroidAppLinks.Init(this);
 
-			MobileAds.Initialize(ApplicationContext, "ca-app-pub-2079580879894926~9878575093");
+			MobileAds.Initialize(ApplicationContext, "ca-app-pub-XXXXXXXXXXX");
 
 			FileAccessHelper.GetLocalFilePath("Data.sqlite");
 
