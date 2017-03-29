@@ -37,7 +37,7 @@ namespace yysgl.forms.iOS
 			adView = new AdsBannerView(size: AdSizeCons.SmartBannerPortrait,
 										   origin: new CGPoint(0, UIScreen.MainScreen.Bounds.Size.Height - AdSizeCons.Banner.Size.Height))
 			{
-				AdUnitID = "ca-app-pub-2079580879894926/2215707492",
+				AdUnitID = "ca-app-pub-XXXXXXXXXXXX",
 				RootViewController = GetVisibleViewController()
 			};
 
