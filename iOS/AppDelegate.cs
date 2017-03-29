@@ -30,7 +30,7 @@ namespace yysgl.forms.iOS
 			//x = typeof(Xamarin.Forms.Themes.iOS.UnderlineEffect);
 
 			//initialize MobileAds
-			MobileAds.Configure("ca-app-pub-2079580879894926~9738974291");
+			MobileAds.Configure("ca-app-pub-XXXXXXXXXXXXXX");
 
 			return base.FinishedLaunching(app, options);
 		}
