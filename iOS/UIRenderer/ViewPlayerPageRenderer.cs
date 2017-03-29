@@ -94,7 +94,7 @@ namespace yysgl.forms.iOS
 		{
 			adView = new NativeExpressAdView(AdSizeCons.GetFullWidthPortrait(150));
 
-			adView.AdUnitID = "ca-app-pub-2079580879894926/7431309498";
+			adView.AdUnitID = "ca-app-pub-XXXXXXXXXXXXXXX";
 			adView.RootViewController = ViewController;
 
 			// The video options object can be used to control the initial mute state of video assets.
